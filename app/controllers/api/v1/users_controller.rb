@@ -1,12 +1,13 @@
 class Api::V1::UsersController < ApplicationController
 
   def index
-    @users = User.all
-    respond_to do |format|
-      format.json{
-        render json: {user: @users}.to_json
-      }
-    end
+    users = User.all
+    render json: {user: users}.to_json
+  end
+
+  def show
+  	user = User.find(params[:id])
+  	render json: {user: user}.to_json  	
   end
 
 end

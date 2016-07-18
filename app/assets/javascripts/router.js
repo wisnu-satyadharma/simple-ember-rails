@@ -1,7 +1,8 @@
 // For more information see: http://emberjs.com/guides/routing/
 
 App.Router.map(function() {
-   this.route('users', function() {
+  this.route('users', function() {
     this.route('index', { path: '/' });
+    this.route('show', { path: '/:user_id' });
   });
 });
