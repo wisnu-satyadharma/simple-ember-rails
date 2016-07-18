@@ -14,6 +14,7 @@
                   <th>Last Name</th>
                   <th>Email</th>
                   <th>Show</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tbody>
@@ -28,6 +29,11 @@
 											<i class="glyphicon glyphicon-folder-open
 
 "></i>
+											{{/link-to}}
+										</td>
+										<td>
+											{{#link-to 'users.edit' user}} 
+												<i class="glyphicon glyphicon-edit"></i>
 											{{/link-to}}
 										</td>
 									</tr>						
