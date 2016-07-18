@@ -1,8 +1,4 @@
 App.UsersEditRoute = Ember.Route.extend({
-  model: function(params, transitions) {
-  
- 	  // return this.store.query('user', params); 
-  },
   actions:{
 		update(user) {
       user.save().then(() => this.transitionTo('users'));

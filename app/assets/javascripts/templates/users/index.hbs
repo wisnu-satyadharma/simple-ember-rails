@@ -15,6 +15,7 @@
                   <th>Email</th>
                   <th>Show</th>
                   <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -35,6 +36,11 @@
 											{{#link-to 'users.edit' user}} 
 												<i class="glyphicon glyphicon-edit"></i>
 											{{/link-to}}
+										</td>
+										<td>
+											<button type="button" class="btn btn-xs btn-danger" {{action 'delete' user}}>
+											  <span class="glyphicon glyphicon-trash"></span>&nbsp;
+											</button>
 										</td>
 									</tr>						
 								{{/each}}              
