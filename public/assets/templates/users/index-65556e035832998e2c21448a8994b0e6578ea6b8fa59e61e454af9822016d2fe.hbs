@@ -1,0 +1,61 @@
+<div class="col-md-10">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="content-box-large">
+				<div class="panel-heading">
+				<div class="panel-title">User List</div>
+
+				<div class="panel-options">					
+					{{#link-to 'users.new'}}
+						<i class="glyphicon glyphicon-plus">&nbsp;</i>
+					{{/link-to}}
+				</div>
+
+			</div>
+			<div class="panel-body">
+				<table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Show</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+								{{#each model as |user|}}
+									<tr>
+										<td>#</td>
+										<td>{{user.first_name}}</td>
+										<td>{{user.last_name}}</td>
+										<td>{{user.email}}</td>
+										<td>
+											{{#link-to 'users.show' user}} 
+											<i class="glyphicon glyphicon-folder-open
+
+"></i>
+											{{/link-to}}
+										</td>
+										<td>
+											{{#link-to 'users.edit' user}} 
+												<i class="glyphicon glyphicon-edit"></i>
+											{{/link-to}}
+										</td>
+										<td>
+											<button type="button" class="btn btn-xs btn-danger" {{action 'delete' user}}>
+											  <span class="glyphicon glyphicon-trash"></span>&nbsp;
+											</button>
+										</td>
+									</tr>						
+								{{/each}}              
+              </tbody>
+            </table>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
