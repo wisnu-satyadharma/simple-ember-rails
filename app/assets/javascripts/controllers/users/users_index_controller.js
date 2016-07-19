@@ -1,8 +1,15 @@
 App.UsersIndexController = Ember.Controller.extend({
 	actions: {
 		delete: function(user) {
-			alert('sampe');
 			user.destroyRecord();
+		}	
+	}
+});
+
+App.UsersNewController = Ember.Controller.extend({
+	actions: {
+		save: function(model) {
+			model.save().then(() => this.transitionToRoute('users'));
 		}	
 	}
 })
